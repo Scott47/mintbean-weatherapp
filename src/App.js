@@ -1,10 +1,12 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
+import WeatherGET from './components/OpenWeatherApi'
 
 function App() {
   return (
     <div className="App">
+      <WeatherGET />
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
