@@ -37,9 +37,9 @@ const WeatherGET = (props) => {
       <Weather getZipcode={getZipcode} {...props}></Weather>
       <div className="myWeather-Div">
         {myWeather.main ? (
-          <p>The temperature for {myWeather.name}, {myWeather.state} is {myWeather.main.temp}</p>
+          <p>The temperature for {myWeather.name} is {Math.round((myWeather.main.temp - 273.15) * 9/5 + 32)}</p>
         ) : (
-          <p>You have no money</p>
+          <p>There is no weather information for this zipcode</p>
         )}
       </div>
     </>
