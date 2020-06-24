@@ -1,0 +1,14 @@
+.table {
+    vertical-align: center;
+    position: relative;
+    text-align: center;
+}
+.weather-info {
+    width:200px;
+    padding:15px;
+}
+
+#column {
+    font-size: 24;
+    font-weight:bold;
+}
