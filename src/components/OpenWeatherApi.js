@@ -25,22 +25,29 @@ const WeatherGET = (props) => {
       });
   };
 
+
   useEffect(() => {
     getMyWeather('37207');
   }, []);
 
   if (myWeather.main) {
-    console.log(myWeather, "hello");
+    console.log(myWeather.weather[0].icon, "hello");
   }
   return (
     <>
-      <Weather getZipcode={getZipcode} {...props}></Weather>
+      <Weather getZipcode={getZipcode} {...props} />
       <div className="myWeather-Div">
         {myWeather.main ? (
-          <p>The temperature for {myWeather.name} is {Math.round((myWeather.main.temp - 273.15) * 9/5 + 32)}</p>
+            <div>
+          <p>The temperature for {myWeather.name} is {Math.round((myWeather.main.temp - 273.15) * 9/5 + 32)}° Fahrenheit</p>
+          <img src={`http://openweathermap.org/img/wn/${myWeather.weather[0].icon}@2x.png`}/>
+          {/* <img src="http://openweathermap.org/img/wn/10d@2x.png"/> */}
+          </div>
+
         ) : (
           <p>There is no weather information for this zipcode</p>
         )}
+
       </div>
     </>
   );
