@@ -14,7 +14,7 @@ const WeatherGET = (props) => {
 
   const getMyWeather = (zipcode) => {
     fetch(
-      `http://api.openweathermap.org/data/2.5/weather?zip=${zipcode},us&appid=f8beefed0e999fac612802ea1139522d`,
+      `https://api.openweathermap.org/data/2.5/weather?zip=${zipcode},us&appid=f8beefed0e999fac612802ea1139522d`,
       {
         method: "GET",
       }
