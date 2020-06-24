@@ -1,15 +1,20 @@
 import React, { useEffect, useState } from "react";
+import Weather from "./Weather";
 
 //Author: Scott Silver
 //Purpose: Display Currency associated with fetch.
 //Methods: GET Currency
 
 const WeatherGET = (props) => {
-  const [myWeather, setMyWeather] = useState({ weather_current: {} });
+  const [myWeather, setMyWeather] = useState({});
 
-  const getMyWeather = () => {
+  const getZipcode = (zipcode) => {
+    getMyWeather(zipcode);
+  };
+
+  const getMyWeather = (zipcode) => {
     fetch(
-      "http://api.openweathermap.org/data/2.5/weather?q=Nashville,us&APPID=f8beefed0e999fac612802ea1139522d",
+      `http://api.openweathermap.org/data/2.5/weather?zip=${zipcode},us&appid=f8beefed0e999fac612802ea1139522d`,
       {
         method: "GET",
       }
@@ -18,20 +23,26 @@ const WeatherGET = (props) => {
       .then((data) => {
         setMyWeather(data);
       });
-
   };
 
   useEffect(() => {
-    getMyWeather();
+    getMyWeather('37207');
   }, []);
 
-  console.log(myWeather.main, "hello");
+  if (myWeather.main) {
+    console.log(myWeather, "hello");
+  }
   return (
-
-    <div className="myWeather-Div">
-      {/* <p>The temperature is ${myWeather} </p> */}
-
-    </div>
+    <>
+      <Weather getZipcode={getZipcode} {...props}></Weather>
+      <div className="myWeather-Div">
+        {myWeather.main ? (
+          <p>The temperature for {myWeather.name}, {myWeather.state} is {myWeather.main.temp}</p>
+        ) : (
+          <p>You have no money</p>
+        )}
+      </div>
+    </>
   );
 };
 
