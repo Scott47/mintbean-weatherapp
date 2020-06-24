@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/mintbean-weatherapp/static/css/main.5f361e03.chunk.css",
-    "main.js": "/mintbean-weatherapp/static/js/main.e9e1a9a4.chunk.js",
-    "main.js.map": "/mintbean-weatherapp/static/js/main.e9e1a9a4.chunk.js.map",
+    "main.js": "/mintbean-weatherapp/static/js/main.b2019660.chunk.js",
+    "main.js.map": "/mintbean-weatherapp/static/js/main.b2019660.chunk.js.map",
     "runtime-main.js": "/mintbean-weatherapp/static/js/runtime-main.98f2f63d.js",
     "runtime-main.js.map": "/mintbean-weatherapp/static/js/runtime-main.98f2f63d.js.map",
     "static/js/2.62b01196.chunk.js": "/mintbean-weatherapp/static/js/2.62b01196.chunk.js",
     "static/js/2.62b01196.chunk.js.map": "/mintbean-weatherapp/static/js/2.62b01196.chunk.js.map",
     "index.html": "/mintbean-weatherapp/index.html",
-    "precache-manifest.fadb8020d6fdb8c2799f7b6a7d3bd6e7.js": "/mintbean-weatherapp/precache-manifest.fadb8020d6fdb8c2799f7b6a7d3bd6e7.js",
+    "precache-manifest.ecfad57b377dd7b3b622a501d3fd3801.js": "/mintbean-weatherapp/precache-manifest.ecfad57b377dd7b3b622a501d3fd3801.js",
     "service-worker.js": "/mintbean-weatherapp/service-worker.js",
     "static/css/main.5f361e03.chunk.css.map": "/mintbean-weatherapp/static/css/main.5f361e03.chunk.css.map",
     "static/js/2.62b01196.chunk.js.LICENSE.txt": "/mintbean-weatherapp/static/js/2.62b01196.chunk.js.LICENSE.txt",
@@ -18,6 +18,6 @@
     "static/js/runtime-main.98f2f63d.js",
     "static/js/2.62b01196.chunk.js",
     "static/css/main.5f361e03.chunk.css",
-    "static/js/main.e9e1a9a4.chunk.js"
+    "static/js/main.b2019660.chunk.js"
   ]
 }
