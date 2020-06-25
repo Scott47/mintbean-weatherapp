@@ -41,38 +41,41 @@ const WeatherGET = (props) => {
         {myWeather.main ? (
           <div className="container">
             <table>
-                <th>{myWeather.name}</th>
-              <tr>
-              <p>
+              <th>{myWeather.name}</th>
+
+                <p>
                   {Math.round(((myWeather.main.temp - 273.15) * 9) / 5 + 32)}°
                   Fahrenheit
                 </p>
                 <td className="table">
-                <img
-                  src={`http://openweathermap.org/img/wn/${myWeather.weather[0].icon}@2x.png`}
-                />
-                <br />
+                  <img
+                    src={`http://openweathermap.org/img/wn/${myWeather.weather[0].icon}@2x.png`}
+                  />
+                  <br />
                   {myWeather.weather[0].description}
-
-
                 </td>
                 <td>
-                    <table className="weather-info">
-                    <tr>
-     			    </tr>
-                    <tr>
-     				<td>High: {Math.round(
-                        ((myWeather.main.temp_max - 273.15) * 9) / 5 + 32
-                      )}
-                      °</td>
-     				<td>Low: {Math.round(
-                        ((myWeather.main.temp_min - 273.15) * 9) / 5 + 32
-                      )}
-                      °</td>
-     			    </tr>
-                 </table>
+                  <table className="weather-info">
+
+
+                      <td>
+                        High:{" "}
+                        {Math.round(
+                          ((myWeather.main.temp_max - 273.15) * 9) / 5 + 32
+                        )}
+                        °
+                      </td>
+                      <td>
+                        Low:{" "}
+                        {Math.round(
+                          ((myWeather.main.temp_min - 273.15) * 9) / 5 + 32
+                        )}
+                        °
+                      </td>
+
+                  </table>
                 </td>
-              </tr>
+
             </table>
           </div>
         ) : (
