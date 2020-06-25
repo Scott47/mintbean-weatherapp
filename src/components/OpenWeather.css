@@ -12,3 +12,7 @@
     font-size: 24;
     font-weight:bold;
 }
+#align-bottom {
+    vertical-align: middle;
+    text-align:center;
+}

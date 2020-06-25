@@ -60,18 +60,18 @@ const WeatherGET = (props) => {
                         src={`http://openweathermap.org/img/wn/${myWeather.weather[0].icon}@2x.png`}
                       />
                     </td>
-                  <td>
+                  <td id="align-bottom">
                     {myWeather.weather[0].description}
                     </td>
 
-                    <td>
+                    <td id="align-bottom">
                         High:{" "}
                         {Math.round(
                           ((myWeather.main.temp_max - 273.15) * 9) / 5 + 32
                         )}
                         °
                       </td>
-                      <td>
+                      <td id="align-bottom">
                         Low:{" "}
                         {Math.round(
                           ((myWeather.main.temp_min - 273.15) * 9) / 5 + 32
