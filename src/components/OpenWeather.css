@@ -20,7 +20,8 @@
 }
 #align-bottom {
     vertical-align: middle;
-    text-align:center;
+    text-align: center;
+    justify-content: center;
 }
 #sunrise {
     justify-content: right;

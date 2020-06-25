@@ -99,19 +99,22 @@ const WeatherGET = (props) => {
                   <tr className="weather-info"><td>
                       <img
                         src={`http://openweathermap.org/img/wn/${myWeather.weather[0].icon}@2x.png`}
-                      />
+                        />
                     </td>
                   <td id="align-bottom">
                     {myWeather.weather[0].description}
                     </td>
-                    <td id="align-bottom">
+                        <td id="align-bottom">Feels like: {Math.round((myWeather.main.feels_like - 273.15) * 9 /5 +32)}</td>
+                        <td></td>
+                    <td className="thead-sunrise" id="align-bottom">
+                        <br />
                         High:{" "}
                         {Math.round(
                           ((myWeather.main.temp_max - 273.15) * 9) / 5 + 32
                         )}
                         °
                       </td>
-                      <td id="align-bottom">
+                      <td className="thead-sunrise" id="align-bottom">
                         Low:{" "}
                         {Math.round(
                           ((myWeather.main.temp_min - 273.15) * 9) / 5 + 32
@@ -120,7 +123,9 @@ const WeatherGET = (props) => {
                       </td>
                   </tr>
                   <tr>
-                     <td> 🌬 {convertDeg(myWeather.wind.direction)} at {myWeather.wind.speed} mph  </td>
+                     <td>Wind is {convertDeg(myWeather.wind.direction)} at {myWeather.wind.speed} mph  </td>
+                     <td></td>
+                     <td>Humidity is {myWeather.main.humidity}%</td>
                   </tr>
                 </tbody>
               </table>
