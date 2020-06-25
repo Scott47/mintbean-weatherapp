@@ -36,56 +36,59 @@ const WeatherGET = (props) => {
   }
   return (
     <>
+    <h3>Search your weather in the United States by zip code </h3>
       <Weather getZipcode={getZipcode} {...props} />
       <div className="myWeather-Div">
         {myWeather.main ? (
           <div className="container">
-             <div className="row">
-            <table>
-              <thead>
-                <tr>
-                  <th>{myWeather.name}</th>
-                </tr>
-              </thead>
-              <tbody className="table">
+            <div className="row">
+              <table>
+                <thead>
                   <tr>
-                <td>
-                  {Math.round(((myWeather.main.temp - 273.15) * 9) / 5 + 32)}°
-                  Fahrenheit
-                </td>
-                <td >
-                  <img
-                    src={`http://openweathermap.org/img/wn/${myWeather.weather[0].icon}@2x.png`}
-                  />
-                  <br />
-                  {myWeather.weather[0].description}
-                </td>
+                    <th>{myWeather.name}</th>
+                    <th>
+                      {Math.round(
+                        ((myWeather.main.temp - 273.15) * 9) / 5 + 32
+                      )}
+                      ° F
+                    </th>
+                  </tr>
+                </thead>
+                <tbody className="table">
+                  <tr className="weather-info"><td>
+                      <img
+                        src={`http://openweathermap.org/img/wn/${myWeather.weather[0].icon}@2x.png`}
+                      />
+                    </td>
+                  <td>
+                    {myWeather.weather[0].description}
+                    </td>
 
-                  <tr className="weather-info">
                     <td>
-                      High:{" "}
-                      {Math.round(
-                        ((myWeather.main.temp_max - 273.15) * 9) / 5 + 32
-                      )}
-                      °
-                    </td>
-                    <td>
-                      Low:{" "}
-                      {Math.round(
-                        ((myWeather.main.temp_min - 273.15) * 9) / 5 + 32
-                      )}
-                      °
-                    </td>
-                </tr>
-                </tr>
-              </tbody>
+                        High:{" "}
+                        {Math.round(
+                          ((myWeather.main.temp_max - 273.15) * 9) / 5 + 32
+                        )}
+                        °
+                      </td>
+                      <td>
+                        Low:{" "}
+                        {Math.round(
+                          ((myWeather.main.temp_min - 273.15) * 9) / 5 + 32
+                        )}
+                        °
+                      </td>
+
+
+
+                  </tr>
+                </tbody>
               </table>
-              </div>
-              </div>
+            </div>
+          </div>
         ) : (
           <p>There is no weather information for this zipcode</p>
         )}
-
       </div>
     </>
   );
