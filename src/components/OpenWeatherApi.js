@@ -27,7 +27,7 @@ const WeatherGET = (props) => {
       });
   };
 
-  var convertDeg = function(deg){
+  const convertDeg = function(deg){
     if (deg>11.25 && deg<33.75){
       return "NNE";
     }else if (deg>33.75 && deg<56.25){
@@ -67,10 +67,6 @@ const WeatherGET = (props) => {
     getMyWeather("37207");
   }, []);
 
-  if (myWeather.main) {
-    console.log(myWeather.weather[0].icon, "hello");
-  }
-
   return (
     <>
     <h3>Search your weather in the United States by zip code </h3>
@@ -78,8 +74,9 @@ const WeatherGET = (props) => {
       <div className="myWeather-Div">
         {myWeather.main ? (
           <div className="container">
-            <div className="row">
-              <table>
+            <div className="row justify-content-center">
+                <div className="col-auto">
+              <table class="table-responsive">
                 <thead>
                   <tr>
                     <th><h3>{myWeather.name}</h3></th>
@@ -89,22 +86,24 @@ const WeatherGET = (props) => {
                       )}
                       ° F
                     </th>
-                    <br/>
-                    <th></th>
-                    <th className="thead-sunrise">Sunrise: {new Date(myWeather.sys.sunrise * 1000).toLocaleTimeString()}</th>
-                    <th className="thead-sunrise"> Sunset: {new Date(myWeather.sys.sunset * 1000).toLocaleTimeString()}</th>
-                  </tr>
-                </thead>
-                <tbody className="table">
-                  <tr className="weather-info"><td>
-                      <img
-                        src={`http://openweathermap.org/img/wn/${myWeather.weather[0].icon}@2x.png`}
-                        />
-                    </td>
-                  <td id="align-bottom">
+                    <td id="align-bottom">
                     {myWeather.weather[0].description}
                     </td>
-                        <td id="align-bottom">Feels like: {Math.round((myWeather.main.feels_like - 273.15) * 9 /5 +32)}</td>
+                    <th></th>
+                    <th className="thead-sunrise">
+                        🌅 Sunrise: {new Date(myWeather.sys.sunrise * 1000).toLocaleTimeString()}</th>
+                    <th className="thead-sunrise">🌇 Sunset: {new Date(myWeather.sys.sunset * 1000).toLocaleTimeString()}</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr className="weather-info"><td>
+                      <img
+                        src={`http://openweathermap.org/img/wn/${myWeather.weather[0].icon}@2x.png`} alt="weather-icon"
+                        />
+                    </td>
+
+                        <td id="align-bottom"> Feels like: {Math.round((myWeather.main.feels_like - 273.15) * 9 /5 +32)}°</td>
+                        <td></td>
                         <td></td>
                     <td className="thead-sunrise" id="align-bottom">
                         <br />
@@ -123,12 +122,15 @@ const WeatherGET = (props) => {
                       </td>
                   </tr>
                   <tr>
-                     <td>Wind is {convertDeg(myWeather.wind.direction)} at {myWeather.wind.speed} mph  </td>
-                     <td></td>
-                     <td>Humidity is {myWeather.main.humidity}%</td>
+&emsp;
+                     <td>💨  Wind is {convertDeg(myWeather.wind.direction)} at {myWeather.wind.speed} mph  </td>
+                     &emsp;
+                     &emsp;
+                     <td>💧 Humidity is {myWeather.main.humidity}%</td>
                   </tr>
                 </tbody>
               </table>
+              </div>
             </div>
           </div>
         ) : (
