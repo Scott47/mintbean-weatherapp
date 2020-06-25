@@ -3,6 +3,12 @@
     position: relative;
     text-align: center;
 }
+
+.thead-sunrise {
+    display: flex;
+
+}
+
 .weather-info {
     width:200px;
     padding:15px;
@@ -15,4 +21,7 @@
 #align-bottom {
     vertical-align: middle;
     text-align:center;
+}
+#sunrise {
+    justify-content: right;
 }

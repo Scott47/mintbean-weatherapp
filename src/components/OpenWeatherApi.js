@@ -34,6 +34,7 @@ const WeatherGET = (props) => {
   if (myWeather.main) {
     console.log(myWeather.weather[0].icon, "hello");
   }
+
   return (
     <>
     <h3>Search your weather in the United States by zip code </h3>
@@ -45,13 +46,17 @@ const WeatherGET = (props) => {
               <table>
                 <thead>
                   <tr>
-                    <th>{myWeather.name}</th>
+                    <th><h3>{myWeather.name}</h3></th>
                     <th>
                       {Math.round(
                         ((myWeather.main.temp - 273.15) * 9) / 5 + 32
                       )}
                       ° F
                     </th>
+                    <br/>
+                    <th></th>
+                    <th className="thead-sunrise">Sunrise: {new Date(myWeather.sys.sunrise * 1000).toLocaleTimeString()}</th>
+                    <th className="thead-sunrise"> Sunset: {new Date(myWeather.sys.sunset * 1000).toLocaleTimeString()}</th>
                   </tr>
                 </thead>
                 <tbody className="table">
@@ -78,9 +83,6 @@ const WeatherGET = (props) => {
                         )}
                         °
                       </td>
-
-
-
                   </tr>
                 </tbody>
               </table>
