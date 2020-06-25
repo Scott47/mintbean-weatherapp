@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
-import './OpenWeather.css'
+import "./OpenWeather.css";
 import Weather from "./Weather";
 
 //Author: Scott Silver
@@ -40,47 +40,52 @@ const WeatherGET = (props) => {
       <div className="myWeather-Div">
         {myWeather.main ? (
           <div className="container">
+             <div className="row">
             <table>
-              <th>{myWeather.name}</th>
-
-                <p>
+              <thead>
+                <tr>
+                  <th>{myWeather.name}</th>
+                </tr>
+              </thead>
+              <tbody className="table">
+                  <tr>
+                <td>
                   {Math.round(((myWeather.main.temp - 273.15) * 9) / 5 + 32)}°
                   Fahrenheit
-                </p>
-                <td className="table">
+                </td>
+                <td >
                   <img
                     src={`http://openweathermap.org/img/wn/${myWeather.weather[0].icon}@2x.png`}
                   />
                   <br />
                   {myWeather.weather[0].description}
                 </td>
-                <td>
-                  <table className="weather-info">
 
-
-                      <td>
-                        High:{" "}
-                        {Math.round(
-                          ((myWeather.main.temp_max - 273.15) * 9) / 5 + 32
-                        )}
-                        °
-                      </td>
-                      <td>
-                        Low:{" "}
-                        {Math.round(
-                          ((myWeather.main.temp_min - 273.15) * 9) / 5 + 32
-                        )}
-                        °
-                      </td>
-
-                  </table>
-                </td>
-
-            </table>
-          </div>
+                  <tr className="weather-info">
+                    <td>
+                      High:{" "}
+                      {Math.round(
+                        ((myWeather.main.temp_max - 273.15) * 9) / 5 + 32
+                      )}
+                      °
+                    </td>
+                    <td>
+                      Low:{" "}
+                      {Math.round(
+                        ((myWeather.main.temp_min - 273.15) * 9) / 5 + 32
+                      )}
+                      °
+                    </td>
+                </tr>
+                </tr>
+              </tbody>
+              </table>
+              </div>
+              </div>
         ) : (
           <p>There is no weather information for this zipcode</p>
         )}
+
       </div>
     </>
   );
