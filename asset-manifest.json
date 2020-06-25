@@ -1,18 +1,18 @@
 {
   "files": {
-    "main.css": "/mintbean-weatherapp/static/css/main.0a805c66.chunk.css",
-    "main.js": "/mintbean-weatherapp/static/js/main.0fdce09d.chunk.js",
-    "main.js.map": "/mintbean-weatherapp/static/js/main.0fdce09d.chunk.js.map",
+    "main.css": "/mintbean-weatherapp/static/css/main.321b800e.chunk.css",
+    "main.js": "/mintbean-weatherapp/static/js/main.706ec7c5.chunk.js",
+    "main.js.map": "/mintbean-weatherapp/static/js/main.706ec7c5.chunk.js.map",
     "runtime-main.js": "/mintbean-weatherapp/static/js/runtime-main.98f2f63d.js",
     "runtime-main.js.map": "/mintbean-weatherapp/static/js/runtime-main.98f2f63d.js.map",
     "static/css/2.af3c1da9.chunk.css": "/mintbean-weatherapp/static/css/2.af3c1da9.chunk.css",
     "static/js/2.56482162.chunk.js": "/mintbean-weatherapp/static/js/2.56482162.chunk.js",
     "static/js/2.56482162.chunk.js.map": "/mintbean-weatherapp/static/js/2.56482162.chunk.js.map",
     "index.html": "/mintbean-weatherapp/index.html",
-    "precache-manifest.685f3e361de49f4bf7314b256f0c31a4.js": "/mintbean-weatherapp/precache-manifest.685f3e361de49f4bf7314b256f0c31a4.js",
+    "precache-manifest.ad8d2d1c5b4515cc43615e07af761b7d.js": "/mintbean-weatherapp/precache-manifest.ad8d2d1c5b4515cc43615e07af761b7d.js",
     "service-worker.js": "/mintbean-weatherapp/service-worker.js",
     "static/css/2.af3c1da9.chunk.css.map": "/mintbean-weatherapp/static/css/2.af3c1da9.chunk.css.map",
-    "static/css/main.0a805c66.chunk.css.map": "/mintbean-weatherapp/static/css/main.0a805c66.chunk.css.map",
+    "static/css/main.321b800e.chunk.css.map": "/mintbean-weatherapp/static/css/main.321b800e.chunk.css.map",
     "static/js/2.56482162.chunk.js.LICENSE.txt": "/mintbean-weatherapp/static/js/2.56482162.chunk.js.LICENSE.txt",
     "static/media/logo.svg": "/mintbean-weatherapp/static/media/logo.5d5d9eef.svg"
   },
@@ -20,7 +20,7 @@
     "static/js/runtime-main.98f2f63d.js",
     "static/css/2.af3c1da9.chunk.css",
     "static/js/2.56482162.chunk.js",
-    "static/css/main.0a805c66.chunk.css",
-    "static/js/main.0fdce09d.chunk.js"
+    "static/css/main.321b800e.chunk.css",
+    "static/js/main.706ec7c5.chunk.js"
   ]
 }

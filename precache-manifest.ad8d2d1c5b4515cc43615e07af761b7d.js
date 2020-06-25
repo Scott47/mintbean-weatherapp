@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "ed3327b42a759cd2e0eb8df7d17b715d",
+    "revision": "8ca50cd8430d5a93d1a5f7e0f33001da",
     "url": "/mintbean-weatherapp/index.html"
   },
   {
@@ -8,8 +8,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/mintbean-weatherapp/static/css/2.af3c1da9.chunk.css"
   },
   {
-    "revision": "259d613858e4b9ff33db",
-    "url": "/mintbean-weatherapp/static/css/main.0a805c66.chunk.css"
+    "revision": "5d8971242c077230f333",
+    "url": "/mintbean-weatherapp/static/css/main.321b800e.chunk.css"
   },
   {
     "revision": "273a51432b29d8ae69b5",
@@ -20,8 +20,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/mintbean-weatherapp/static/js/2.56482162.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "259d613858e4b9ff33db",
-    "url": "/mintbean-weatherapp/static/js/main.0fdce09d.chunk.js"
+    "revision": "5d8971242c077230f333",
+    "url": "/mintbean-weatherapp/static/js/main.706ec7c5.chunk.js"
   },
   {
     "revision": "43c7e5f55c74c5e91e0c",
