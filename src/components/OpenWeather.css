@@ -7,6 +7,9 @@
     justify-content: left;
     text-align: left;
 } */
+.container {
+    padding-bottom: 2em;
+}
 .card-header1 {
     background-color: rgb(127, 197, 255);
     vertical-align: middle;
@@ -15,7 +18,7 @@
 }
 #background {
     background-color: rgb(201, 201, 247);
-    height: 100%;
+    height: 100vh;
 }
 /* .thead-sunrise {
     display: flex;
