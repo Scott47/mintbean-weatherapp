@@ -173,7 +173,7 @@ const WeatherGET = (props) => {
                         Pressure:{" "}
                       </strong>
                     </div>
-                    <div class="col sm-4">{myWeather.main.pressure * 0.030.toFixed(2)} in.</div>
+                    <div class="col sm-4">{(myWeather.main.pressure * 0.030).toFixed(2)} in.</div>
                   </div>
                 </div>
               </div>
