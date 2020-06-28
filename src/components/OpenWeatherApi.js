@@ -9,6 +9,7 @@ import Weather from "./Weather";
 
 const WeatherGET = (props) => {
   const [myWeather, setMyWeather] = useState({});
+  const [myCity, setMyCity] = useState({});
 
   const getZipcode = (zipcode) => {
     getMyWeather(zipcode);
@@ -26,6 +27,17 @@ const WeatherGET = (props) => {
         setMyWeather(data);
       });
   };
+  const getMyCity = (city) => {
+      fetch(
+      `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=f8beefed0e999fac612802ea1139522d`,
+          {
+              method: "GET"
+          })
+          .then((response) => response.json())
+          .then((data) => {
+              setMyWeather(data)
+          })
+  }
 
   const convertDeg = function (deg) {
     if (deg > 11.25 && deg < 33.75) {
@@ -65,6 +77,7 @@ const WeatherGET = (props) => {
 
   useEffect(() => {
     getMyWeather("37207");
+    getMyCity("Nashville")
   }, []);
 
   return (
@@ -75,10 +88,10 @@ const WeatherGET = (props) => {
           <div class="col sm">
             <div class="card">
               <h5 class="card-header">
-                Search for current weather by US zipcode
+                Search for current weather by city or zipcode
               </h5>
               <div class="card-body">
-                <Weather getZipcode={getZipcode} {...props} />
+                <Weather getZipcode={getZipcode} {...props} getMyCity={getMyCity} {...props} />
               </div>
             </div>
           </div>
@@ -160,7 +173,7 @@ const WeatherGET = (props) => {
                         Pressure:{" "}
                       </strong>
                     </div>
-                    <div class="col sm-4">{myWeather.main.pressure * 0.030} in.</div>
+                    <div class="col sm-4">{myWeather.main.pressure * 0.030.toFixed(2)} in.</div>
                   </div>
                 </div>
               </div>
@@ -177,95 +190,4 @@ const WeatherGET = (props) => {
 
 export default WeatherGET;
 
-{
-  /* <h3>Search your weather in the United States by zip code </h3>
-      <Weather getZipcode={getZipcode} {...props} />
-      <div className="myWeather-Div">
-        {myWeather.main ? (
-          <div className="container">
-            <div className="row justify-content-center">
-              <div className="col-auto">
-                <table class="table-responsive">
-                  <thead>
-                    <tr>
-                      <th>
-                        <h3>{myWeather.name}</h3>
-                      </th>
-                      <th>
-                        {Math.round(
-                          ((myWeather.main.temp - 273.15) * 9) / 5 + 32
-                        )}
-                        ° F
-                      </th>
-                      <td id="align-bottom">
-                        {myWeather.weather[0].description}
-                      </td>
-                      <th></th>
-                      <th className="thead-sunrise">
-                        🌅 Sunrise:{" "}
-                        {new Date(
-                          myWeather.sys.sunrise * 1000
-                        ).toLocaleTimeString()}
-                      </th>
-                      <th className="thead-sunrise">
-                        🌇 Sunset:{" "}
-                        {new Date(
-                          myWeather.sys.sunset * 1000
-                        ).toLocaleTimeString()}
-                      </th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr className="weather-info">
-                      <td>
-                        <img
-                          src={`http://openweathermap.org/img/wn/${myWeather.weather[0].icon}@2x.png`}
-                          alt="weather-icon"
-                        />
-                      </td>
 
-                      <td id="align-bottom">
-                        {" "}
-                        Feels like:{" "}
-                        {Math.round(
-                          ((myWeather.main.feels_like - 273.15) * 9) / 5 + 32
-                        )}
-                        °
-                      </td>
-                      <td></td>
-                      <td></td>
-                      <td className="thead-sunrise" id="align-bottom">
-                        <br />
-                        High:{" "}
-                        {Math.round(
-                          ((myWeather.main.temp_max - 273.15) * 9) / 5 + 32
-                        )}
-                        °
-                      </td>
-                      <td className="thead-sunrise" id="align-bottom">
-                        Low:{" "}
-                        {Math.round(
-                          ((myWeather.main.temp_min - 273.15) * 9) / 5 + 32
-                        )}
-                        °
-                      </td>
-                    </tr>
-                    <tr>
-                      &emsp;
-                      <td>
-                        💨 Wind is {convertDeg(myWeather.wind.direction)} at{" "}
-                        {myWeather.wind.speed} mph{" "}
-                      </td>
-                      &emsp; &emsp;
-                      <td>💧 Humidity is {myWeather.main.humidity}%</td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
-            </div>
-          </div>
-        ) : (
-          <p>There is no weather information for this zipcode</p>
-        )}
-      </div> */
-}
